@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makarapa Day 8th Annual | Powered by Cell C</title>
+    
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="Experience the 8th Annual Makarapa Day in the heart of Limpopo. The ultimate cultural music festival brought to you by Cell C.">
+    <meta name="keywords" content="Makarapa Day, Cell C, Music Festival, Limpopo, Kabza De Small, Focalistic, VIP Tickets">
+    
+    <!-- Tailwind CSS (via CDN for standalone deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration (Cell C Orange & Custom Fonts) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cellc: '#FF6600',
+                        glass: 'rgba(25, 25, 25, 0.65)',
+                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        /* Subtle pulsing background glow */
+        .glow-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,102,0,0.15) 0%, rgba(10,10,10,0) 70%);
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans relative overflow-x-hidden">
+
+    <div class="glow-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/10 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <!-- Brand Logo -->
+                    <span class="font-bold text-2xl tracking-tighter text-white">MAKARAPA<span class="text-cellc">DAY</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm text-gray-300 hover:text-white transition-colors">The Experience</a>
+                    <a href="#lineup" class="text-sm text-gray-300 hover:text-white transition-colors">Lineup</a>
+                    <a href="#sponsor" class="text-sm text-gray-300 hover:text-white transition-colors">Cell C Hub</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="document.getElementById('vip-modal').classList.remove('hidden')" class="hidden md:block text-sm font-semibold text-white px-5 py-2.5 rounded-full border border-cellc/50 hover:bg-cellc/10 transition-all">
+                        Request VIP Access
+                    </button>
+                    <a href="https://computicket-boxoffice.com/e/makarapa-day-8th-annual-ZaA7A0" target="_blank" class="text-sm font-semibold bg-cellc text-white px-6 py-2.5 rounded-full hover:bg-orange-600 transition-colors shadow-[0_0_15px_rgba(255,102,0,0.4)]">
+                        Buy Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cellc/30 mb-8">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cellc opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-cellc"></span>
+                </span>
+                <span class="text-xs font-medium tracking-wide uppercase text-gray-300">8th Annual Edition • 28 Dec 2026</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6">
+                The Heart of Limpopo<br />
+                <span class="bg-gradient-to-r from-cellc to-orange-400 text-gradient">Beats Here.</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 mb-10">
+                A premium fusion of music, heritage, and lifestyle. Join us at Uniq Shisanyama, Mabopo for the cultural event of the year.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://computicket-boxoffice.com/e/makarapa-day-8th-annual-ZaA7A0" target="_blank" class="flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors">
+                    Secure General Access <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <button onclick="document.getElementById('vip-modal').classList.remove('hidden')" class="flex items-center justify-center gap-2 glass-panel border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-colors">
+                    Cell C VIP Packages <i data-lucide="star" class="w-5 h-5 text-cellc"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sponsor Banner Showcase -->
+    <section id="sponsor" class="py-10 border-y border-white/10 bg-black/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-semibold tracking-widest text-gray-500 uppercase mb-6">Connectivity Partner & Headline Sponsor</p>
+            <div class="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity">
+                <!-- Placeholder for Cell C Logo -->
+                <h2 class="text-3xl font-black tracking-tighter text-white flex items-center gap-2">
+                    Cell <span class="bg-cellc text-white px-3 py-1 rounded-md">C</span>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lineup / Features Section -->
+    <section id="lineup" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">A World-Class Stage</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Experience exclusive performances from South Africa's finest. The full roster drops soon—register for VIP to get early access.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-panel rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-full bg-cellc/20 flex items-center justify-center mb-6">
+                        <i data-lucide="music-4" class="text-cellc w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Amapiano Royalty</h3>
+                    <p class="text-gray-400 text-sm">Top-tier headliners defining the sound of the summer. Exclusive sets only at Makarapa.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-panel rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 border-cellc/30">
+                    <div class="w-12 h-12 rounded-full bg-cellc/20 flex items-center justify-center mb-6">
+                        <i data-lucide="wifi" class="text-cellc w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cell C Connect Zones</h3>
+                    <p class="text-gray-400 text-sm">High-speed Wi-Fi hubs across the venue. Stream your experience live without dropping a frame.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-panel rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-full bg-cellc/20 flex items-center justify-center mb-6">
+                        <i data-lucide="ticket" class="text-cellc w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">VIP Lounges</h3>
+                    <p class="text-gray-400 text-sm">Premium bottle service, exclusive viewing decks, and dedicated fast-track entry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-xl tracking-tighter text-white">MAKARAPA<span class="text-cellc">DAY</span></span>
+                </div>
+                <div class="text-sm text-gray-500 text-center md:text-left">
+                    &copy; 2026 Makarapa Day. All rights reserved. <br/>
+                    Built by <span class="text-white font-medium">Automania</span>.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VIP / Lead Capture Modal (n8n Webhook Target) -->
+    <div id="vip-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="document.getElementById('vip-modal').classList.add('hidden')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg px-4">
+            <div class="glass-panel rounded-3xl p-8 relative border-cellc/50">
+                <button onclick="document.getElementById('vip-modal').classList.add('hidden')" class="absolute top-6 right-6 text-gray-400 hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                
+                <h3 class="text-2xl font-bold mb-2">Cell C VIP Access</h3>
+                <p class="text-sm text-gray-400 mb-6">Register your details below. Our concierge will send your digital pass directly via WhatsApp.</p>
+                
+                <!-- Form mapped to n8n Webhook -->
+                <form id="vip-form" class="space-y-4" onsubmit="submitWebhook(event)">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-400 mb-1">Full Name</label>
+                        <input type="text" id="name" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cellc focus:ring-1 focus:ring-cellc transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-400 mb-1">WhatsApp Number</label>
+                        <input type="tel" id="phone" required placeholder="+27..." class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cellc focus:ring-1 focus:ring-cellc transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-400 mb-1">Email Address</label>
+                        <input type="email" id="email" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cellc focus:ring-1 focus:ring-cellc transition-colors">
+                    </div>
+                    
+                    <!-- Cloudflare Turnstile Placeholder -->
+                    <div class="bg-black/50 border border-white/10 rounded-xl p-4 flex items-center justify-between mt-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded border border-gray-600 flex items-center justify-center bg-gray-800">
+                                <i data-lucide="check" class="w-4 h-4 text-green-500 hidden" id="cf-check"></i>
+                            </div>
+                            <span class="text-xs text-gray-400">Verify you are human</span>
+                        </div>
+                        <span class="text-[10px] text-gray-500 flex flex-col items-end"><span>Cloudflare</span><span>Turnstile</span></span>
+                    </div>
+
+                    <button type="submit" class="w-full bg-cellc text-white font-bold rounded-xl px-4 py-4 mt-6 hover:bg-orange-600 transition-colors flex justify-center items-center gap-2">
+                        Request VIP Pass <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                    <p class="text-[10px] text-gray-500 text-center mt-4">By submitting, you consent to receive event updates via WhatsApp.</p>
+                </form>
+                
+                <!-- Success State -->
+                <div id="success-state" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/50">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Request Received</h4>
+                    <p class="text-sm text-gray-400">Check your WhatsApp. Your digital portal is being prepared.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simulate Form Submission to n8n Webhook
+        function submitWebhook(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            // Simulate processing
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Processing...';
+            lucide.createIcons();
+            document.getElementById('cf-check').classList.remove('hidden');
+            
+            setTimeout(() => {
+                // Here is where your n8n Webhook POST logic goes:
+                /*
+                fetch('YOUR_N8N_WEBHOOK_URL', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: document.getElementById('name').value,
+                        phone: document.getElementById('phone').value,
+                        email: document.getElementById('email').value
+                    })
+                });
+                */
+                
+                document.getElementById('vip-form').classList.add('hidden');
+                document.getElementById('success-state').classList.remove('hidden');
+                
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
