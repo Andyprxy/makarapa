@@ -10,8 +10,8 @@
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -21,7 +21,6 @@
             theme: {
                 extend: {
                     colors: {
-                        /* High-End Clean Light Palette */
                         bgLight: '#FAF9F6', /* Alabaster */
                         bgWhite: '#FFFFFF',
                         accent: '#C5A059', /* Classic Gold */
@@ -32,11 +31,9 @@
                     },
                     boxShadow: {
                         'editorial': '0 15px 40px rgba(138, 98, 42, 0.08)',
-                        /* True Neomorphism for #FAF9F6 background */
                         'neo': '10px 10px 20px rgba(217, 212, 197, 0.6), -10px -10px 20px rgba(255, 255, 255, 1)',
                         'neo-sm': '4px 4px 10px rgba(217, 212, 197, 0.5), -4px -4px 10px rgba(255, 255, 255, 1)',
                         'neo-inset': 'inset 6px 6px 12px rgba(217, 212, 197, 0.5), inset -6px -6px 12px rgba(255, 255, 255, 0.9)',
-                        'neo-inset-sm': 'inset 3px 3px 6px rgba(217, 212, 197, 0.5), inset -3px -3px 6px rgba(255, 255, 255, 0.9)'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -55,7 +52,6 @@
             overflow-x: hidden;
         }
         
-        /* Clean Light Glass Nav */
         .glass-nav-light {
             background: rgba(250, 249, 246, 0.85);
             backdrop-filter: blur(16px);
@@ -63,7 +59,6 @@
             border-bottom: 1px solid rgba(197, 160, 89, 0.15);
         }
 
-        /* Colorless Seamless Blur Mask for Hero */
         .hero-blur-mask {
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
@@ -71,7 +66,6 @@
             -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
         }
 
-        /* High-End Background Patterns */
         .pattern-grid {
             background-image: linear-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px),
                               linear-gradient(90deg, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
@@ -83,7 +77,6 @@
             background-size: 24px 24px;
         }
 
-        /* Clean Form Inputs */
         .clean-input {
             background: #FFFFFF;
             border: 1px solid rgba(197, 160, 89, 0.2);
@@ -97,8 +90,8 @@
             box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
         }
 
-        /* Animated Belt Marquee */
-        .belt-container {
+        /* Continuous Left to Right Marquee */
+        .marquee-container {
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -106,13 +99,17 @@
             width: 100%;
         }
         
-        .belt-track {
+        .marquee-track-ltr {
             display: flex;
             width: max-content;
-            animation: scrollRight 35s linear infinite;
+            animation: scrollLeftToRight 30s linear infinite;
         }
 
-        @keyframes scrollRight {
+        .marquee-track-ltr:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLeftToRight {
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0%); }
         }
@@ -130,9 +127,9 @@
             <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
                 <a href="#story" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">The Experience</a>
                 <a href="#lineup" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">Lineup</a>
-                <a href="#gallery" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">Gallery</a>
-                <a href="#partnerships" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">Partnerships</a>
+                <a href="#sponsors" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">Partners</a>
                 <a href="#csi" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">CSI</a>
+                <a href="#gallery" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">Gallery</a>
                 <a href="#merch" class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-textGrey hover:text-accent transition-colors duration-300">Merch</a>
             </div>
 
@@ -144,23 +141,17 @@
         </div>
     </nav>
 
-    <!-- 100% Opacity Image Hero with Seamless Colorless Blur -->
+    <!-- Hero Section -->
     <main class="relative w-full h-[100svh] min-h-[600px] flex flex-col justify-center items-center text-center overflow-hidden">
-        
-        <!-- Raw Background Image at 100% Opacity -->
         <div class="absolute inset-0 z-0">
             <img src="Y.N.C_Photography0L9A6422.jpg" alt="Makarapa Background" class="w-full h-full object-cover object-center">
         </div>
 
-        <!-- Colorless Seamless Blur Mask -->
         <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
             <div class="hero-blur-mask w-[120vw] h-[70vh] md:w-[90vw] md:h-[80vh]"></div>
         </div>
 
-        <!-- Layered Content -->
         <div class="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center px-4 mt-8 md:mt-10">
-            
-            <!-- White Logo -->
             <img src="makarapa.jpg" alt="Makarapa Day" class="w-48 sm:w-64 md:w-full max-w-md lg:max-w-lg object-contain mix-blend-screen mb-2 drop-shadow-2xl">
 
             <div class="max-w-3xl flex flex-col items-center">
@@ -185,37 +176,108 @@
         </div>
     </main>
 
-    <!-- Animated Belt Marquee -->
-    <div class="relative z-20 w-full border-b border-accent/20 bg-ink py-3 md:py-5 flex items-center">
-        <div class="belt-container">
-            <div class="belt-track">
-                <div class="flex gap-4 md:gap-8 pr-4 md:pr-8">
-                    <span class="text-[9px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase flex items-center whitespace-nowrap">
-                        Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
-                        <span class="text-accent mx-3 md:mx-8">✦</span> Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
-                    </span>
+    <!-- SPONSORS SECTION: Round Icons Moving Left to Right -->
+    <section id="sponsors" class="py-12 md:py-16 bg-white border-b border-accent/15 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-8">
+            <p class="text-accentBrown font-sans tracking-[0.25em] uppercase text-[9px] md:text-xs font-bold mb-1">Collaborations & Backing</p>
+            <h3 class="font-serif text-2xl md:text-3xl text-ink uppercase tracking-wider">Official Partners & Sponsors</h3>
+            <div class="w-10 h-[2px] bg-accent mx-auto mt-2"></div>
+        </div>
+
+        <div class="marquee-container py-4">
+            <div class="marquee-track-ltr flex items-center gap-8 md:gap-14">
+                
+                <!-- Set 1 -->
+                <div class="flex items-center gap-8 md:gap-14 pr-8 md:pr-14">
+                    <!-- Sponsor 1 -->
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor1.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+1'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Sponsor 2 -->
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor2.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+2'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Sponsor 3 -->
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor3.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+3'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Sponsor 4 -->
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor4.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+4'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Sponsor 5 -->
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor5.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+5'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Sponsor 6 -->
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor6.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+6'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
                 </div>
-                <div class="flex gap-4 md:gap-8 pr-4 md:pr-8">
-                    <span class="text-[9px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase flex items-center whitespace-nowrap">
-                        Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
-                        <span class="text-accent mx-3 md:mx-8">✦</span> Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
-                    </span>
+
+                <!-- Set 2 (Duplicate for Seamless Loop) -->
+                <div class="flex items-center gap-8 md:gap-14 pr-8 md:pr-14">
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor1.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+1'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor2.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+2'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor3.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+3'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor4.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+4'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor5.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+5'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-accent/30 bg-bgLight p-1 shadow-neo-sm group-hover:border-accent group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <img src="sponsor6.png" onerror="this.src='https://via.placeholder.com/150/FFFFFF/8A622A?text=Partner+6'" alt="Sponsor Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- The Story (Forced 2 Columns on Mobile & Desktop) -->
+    <!-- The Story -->
     <section id="story" class="py-16 md:py-32 relative bg-bgLight pattern-dots overflow-hidden">
         <div class="absolute top-4 left-4 md:top-10 md:left-10 text-[8rem] md:text-[25rem] font-serif font-bold text-accent/5 leading-none select-none pointer-events-none z-0">
             VIII
         </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <!-- Forced grid-cols-2 for ALL devices to mirror PC alignment -->
             <div class="grid grid-cols-2 gap-4 md:gap-16 lg:gap-20 items-center">
-                
-                <!-- Text on Left -->
                 <div class="pr-2 lg:pr-0">
                     <p class="text-accentBrown font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-[7px] md:text-xs font-black mb-2 md:mb-4 flex items-center gap-1 md:gap-2">
                         <span class="w-4 md:w-8 h-[1px] bg-accentBrown"></span> The Narrative
@@ -233,7 +295,6 @@
                     </a>
                 </div>
                 
-                <!-- Image on Right -->
                 <div class="relative w-full flex justify-end">
                     <div class="absolute -inset-2 md:-inset-6 border border-accent/30 rounded-lg md:rounded-2xl translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 z-0"></div>
                     <div class="bg-white p-1 md:p-2 rounded-lg md:rounded-2xl shadow-editorial relative z-10 w-full max-w-[280px] md:max-w-none">
@@ -244,14 +305,7 @@
         </div>
     </section>
 
-    <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgWhite">
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
-    </div>
-
-    <!-- Artist Spotlight (Raw Images, Text Underneath) -->
+    <!-- Lineup Section -->
     <section id="lineup" class="py-16 md:py-28 relative bg-bgWhite pattern-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
             <div class="text-center mb-10 md:mb-24">
@@ -262,7 +316,6 @@
             </div>
             
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 sm:gap-x-6 lg:gap-x-8 gap-y-8 md:gap-y-12">
-                
                 <div class="flex flex-col items-center group cursor-pointer">
                     <div class="w-full aspect-[4/5] rounded-xl md:rounded-[1.5rem] overflow-hidden mb-3 md:mb-6 shadow-editorial border border-accent/10">
                         <img src="natiey-lepaka.jpg" alt="Natiey Lepaka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -294,20 +347,204 @@
                     <p class="font-cursive text-base md:text-2xl text-accentBrown mb-0.5 md:mb-1">On stage</p>
                     <h3 class="font-sans text-xs md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Makhadzi</h3>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORPORATE SOCIAL INVESTMENT (CSI) SECTION -->
+    <section id="csi" class="py-16 md:py-28 relative bg-bgLight pattern-dots">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+            
+            <div class="text-center mb-14 md:mb-24">
+                <p class="text-accentBrown font-sans tracking-[0.2em] md:tracking-[0.3em] uppercase text-[9px] md:text-xs font-black mb-2 md:mb-3">Social Responsibility & Upliftment</p>
+                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ink mb-3 md:mb-4 uppercase tracking-wider">Corporate Social Investment</h2>
+                <div class="w-12 md:w-16 h-[2px] bg-accent mx-auto mb-4"></div>
+                <p class="text-textGrey text-xs md:text-base max-w-2xl mx-auto">
+                    Empowering our community, building brotherhood, stimulating enterprise, and inspiring youth through active engagement.
+                </p>
+            </div>
+
+            <div class="space-y-16 md:space-y-28">
+
+                <!-- 1. Community and Fun Day (Video: fun.mp4, 1276x720) -->
+                <div class="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 border border-accent/15 shadow-editorial">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                        
+                        <!-- Video on Left (1276 x 720 ratio) -->
+                        <div class="lg:col-span-7">
+                            <div class="relative w-full aspect-[1276/720] rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-accent/20 bg-ink">
+                                <video controls playsinline preload="metadata" class="w-full h-full object-cover">
+                                    <source src="fun.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 px-2 text-[10px] text-textGrey">
+                                <span class="flex items-center gap-1 font-semibold text-accentBrown"><i data-lucide="video" class="w-3 h-3"></i> Makarapa Day Hike</span>
+                                <span>HD 1276 &times; 720</span>
+                            </div>
+                        </div>
+
+                        <!-- Content on Right -->
+                        <div class="lg:col-span-5 flex flex-col justify-center">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bgLight border border-accent/20 w-max mb-4">
+                                <i data-lucide="footprints" class="w-3.5 h-3.5 text-accent"></i>
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-accentBrown">Community & Fun Day</span>
+                            </div>
+                            
+                            <h3 class="font-serif text-2xl md:text-4xl text-ink mb-4 leading-tight">Step by Step, <br/><span class="italic text-accent">We Rise Together.</span></h3>
+                            
+                            <!-- Structured Hike Caption Blockquote -->
+                            <div class="space-y-3 text-xs md:text-sm text-textGrey leading-relaxed bg-[#FAF9F6] p-4 md:p-6 rounded-xl border-l-4 border-accent shadow-sm">
+                                <p class="font-medium text-ink">
+                                    Our Makarapa Day Hike was more than just a climb; it was a lesson in unity, nature, and mindset.
+                                </p>
+                                <p>
+                                    In every breath, we reconnected with the earth. In every step, we reminded ourselves that when we move as one, no mountain is too high.
+                                </p>
+                                <div class="pt-2 border-t border-accent/10">
+                                    <p class="font-semibold text-accentBrown italic">
+                                        "Nature teaches patience. The trail teaches teamwork. Makarapa isn’t just a brand; it’s a brotherhood, a sisterhood, and a movement."
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-[10px] md:text-xs font-black uppercase tracking-widest text-ink mt-4 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent"></span> Let’s keep pushing forward together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Makarapa Day Expo (Video: vid.mp4, 1276x720) -->
+                <div class="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 border border-accent/15 shadow-editorial">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                        
+                        <!-- Content on Left -->
+                        <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bgLight border border-accent/20 w-max mb-4">
+                                <i data-lucide="briefcase" class="w-3.5 h-3.5 text-accent"></i>
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-accentBrown">Economic Development</span>
+                            </div>
+                            
+                            <h3 class="font-serif text-2xl md:text-4xl text-ink mb-4 leading-tight">Makarapa Day <br/><span class="italic text-accent">Business Expo</span></h3>
+                            
+                            <p class="text-xs md:text-sm text-textGrey leading-relaxed mb-4">
+                                A premier commercial incubator accelerating the township economy across Sekhukhune. We provide local entrepreneurs, innovative startups, and SMMEs an authoritative platform to showcase products, forge corporate ties, and access real market scale.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-3 mt-2">
+                                <div class="p-3 rounded-lg bg-bgLight border border-accent/10">
+                                    <h4 class="text-ink font-bold text-xs uppercase mb-1">SMME Growth</h4>
+                                    <p class="text-[10px] text-textGrey leading-tight">Direct consumer reach and corporate supplier matchmaking.</p>
+                                </div>
+                                <div class="p-3 rounded-lg bg-bgLight border border-accent/10">
+                                    <h4 class="text-ink font-bold text-xs uppercase mb-1">Township Economy</h4>
+                                    <p class="text-[10px] text-textGrey leading-tight">Empowering youth-owned ventures with commercial visibility.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Video on Right (1276 x 720 ratio) -->
+                        <div class="lg:col-span-7 order-1 lg:order-2">
+                            <div class="relative w-full aspect-[1276/720] rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-accent/20 bg-ink">
+                                <video controls playsinline preload="metadata" class="w-full h-full object-cover">
+                                    <source src="vid.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 px-2 text-[10px] text-textGrey">
+                                <span class="flex items-center gap-1 font-semibold text-accentBrown"><i data-lucide="video" class="w-3 h-3"></i> Expo Showcase</span>
+                                <span>HD 1276 &times; 720</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Makarapa Day Top 8 Tournament (Image: makarapaT.jpg, 526x526) -->
+                <div class="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 border border-accent/15 shadow-editorial">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                        
+                        <!-- Image on Left (526 x 526 square ratio) -->
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="relative w-full max-w-[420px] aspect-square rounded-2xl overflow-hidden shadow-xl border-2 border-accent/30 bg-bgLight p-1">
+                                <img src="makarapaT.jpg" width="526" height="526" alt="Makarapa Top 8 Tournament" class="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+
+                        <!-- Tournament Info on Right -->
+                        <div class="lg:col-span-7 flex flex-col justify-center">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bgLight border border-accent/20 w-max mb-3">
+                                <i data-lucide="trophy" class="w-3.5 h-3.5 text-accent"></i>
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-accentBrown">Youth Sports Intervention</span>
+                            </div>
+
+                            <h3 class="font-serif text-2xl md:text-4xl text-ink mb-2">Makarapa Day <span class="italic text-accent">Top 8 Tournament</span></h3>
+                            <p class="text-xs md:text-sm text-textGrey mb-6 leading-relaxed">
+                                Makarapa hosted the premier Day Top 8 Tournament from <strong>13 to 14 June 2026</strong>[cite: 1], gathering the finest regional football clubs to ignite local talent, instill sporting discipline, and unite sports enthusiasts across Limpopo.
+                            </p>
+
+                            <!-- Stake and Affiliation Badges -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+                                <div class="bg-bgLight p-3 rounded-xl border border-accent/15">
+                                    <span class="text-[8px] font-bold tracking-widest text-textGrey uppercase block mb-0.5">Total Stake</span>
+                                    <span class="text-base md:text-lg font-black text-ink font-sans">R70 000[cite: 1]</span>
+                                </div>
+                                <div class="bg-bgLight p-3 rounded-xl border border-accent/15">
+                                    <span class="text-[8px] font-bold tracking-widest text-textGrey uppercase block mb-0.5">Affiliation Fee</span>
+                                    <span class="text-base md:text-lg font-black text-accentBrown font-sans">R2 500[cite: 1]</span>
+                                </div>
+                                <div class="bg-bgLight p-3 rounded-xl border border-accent/15 col-span-2 sm:col-span-1">
+                                    <span class="text-[8px] font-bold tracking-widest text-textGrey uppercase block mb-0.5">Dates</span>
+                                    <span class="text-xs md:text-sm font-bold text-ink">13 - 14 June 2026[cite: 1]</span>
+                                </div>
+                            </div>
+
+                            <!-- Prize Pool Breakdown Grid -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
+                                <div class="p-2.5 rounded-lg bg-bgLight border border-accent/20">
+                                    <div class="text-[9px] font-bold text-accentBrown uppercase mb-0.5">1st Prize[cite: 1]</div>
+                                    <div class="text-sm font-black text-ink">R40 000[cite: 1]</div>
+                                    <div class="text-[8px] text-textGrey leading-tight mt-1">+ Kit, Trophy, 15 Medals, 2 Balls[cite: 1]</div>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-bgLight border border-accent/20">
+                                    <div class="text-[9px] font-bold text-accentBrown uppercase mb-0.5">2nd Prize[cite: 1]</div>
+                                    <div class="text-sm font-black text-ink">R20 000[cite: 1]</div>
+                                    <div class="text-[8px] text-textGrey leading-tight mt-1">+ Kit, 15 Medals, 2 Balls[cite: 1]</div>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-bgLight border border-accent/20">
+                                    <div class="text-[9px] font-bold text-accentBrown uppercase mb-0.5">3rd Prize[cite: 1]</div>
+                                    <div class="text-sm font-black text-ink">R6 000[cite: 1]</div>
+                                    <div class="text-[8px] text-textGrey leading-tight mt-1">+ 15 Medals, 1 Ball[cite: 1]</div>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-bgLight border border-accent/20">
+                                    <div class="text-[9px] font-bold text-accentBrown uppercase mb-0.5">4th Prize[cite: 1]</div>
+                                    <div class="text-sm font-black text-ink">R4 000[cite: 1]</div>
+                                    <div class="text-[8px] text-textGrey leading-tight mt-1">+ 1 Soccer Ball[cite: 1]</div>
+                                </div>
+                            </div>
+
+                            <!-- Venue & Contact Footer -->
+                            <div class="pt-4 border-t border-gray-100 flex flex-col sm:flex-row justify-between gap-3 text-[10px] md:text-xs text-textGrey">
+                                <div class="flex items-center gap-1.5">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-accent flex-shrink-0"></i>
+                                    <span><strong>Venue:</strong> Lion Brothers Sports Ground, Ga-Nchabeleng[cite: 1]</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <i data-lucide="phone-call" class="w-4 h-4 text-accent flex-shrink-0"></i>
+                                    <span>071 254 5288 / 078 248 6946[cite: 1]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgWhite">
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
-    </div>
-
-    <!-- Gallery Section (Forced 3 Columns on Mobile) -->
-    <section id="gallery" class="py-16 md:py-28 relative bg-bgLight">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 md:py-28 relative bg-bgWhite">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 relative z-10">
             <div class="text-center mb-10 md:mb-20">
                 <p class="text-accentBrown font-sans tracking-[0.2em] md:tracking-[0.3em] uppercase text-[9px] md:text-xs font-black mb-2 md:mb-3">Look Back</p>
@@ -315,9 +552,7 @@
                 <p class="text-textGrey font-sans tracking-[0.1em] text-[10px] md:text-sm max-w-2xl mx-auto px-4">Relive the energy, the style, and the setup of last year's Makarapa Day experience.</p>
             </div>
 
-            <!-- Gold frame enveloping the entire gallery -->
-            <div class="p-2 md:p-8 border border-accent/20 rounded-xl md:rounded-[2rem] bg-white/50 mx-2 md:mx-0">
-                <!-- Forced grid-cols-3 on mobile to keep a tight, structured gallery look -->
+            <div class="p-2 md:p-8 border border-accent/20 rounded-xl md:rounded-[2rem] bg-bgLight/50 mx-2 md:mx-0">
                 <div class="grid grid-cols-3 lg:grid-cols-4 gap-1.5 md:gap-4">
                     <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
                         <img src="Y.N.C_PhotographyIMG_3907.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
@@ -343,44 +578,24 @@
                     <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
                         <img src="Y.N.C_PhotographyIMG_3449.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A9943.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
-                    </div>
-                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A6422.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
-                    </div>
-                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A6380.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
-                    </div>
-                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A6366.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgLight">
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
-    </div>
-
     <!-- Partnerships & Investments Section -->
-    <section id="partnerships" class="py-16 md:py-28 relative bg-bgWhite pattern-dots">
+    <section id="partnerships" class="py-16 md:py-28 relative bg-bgLight pattern-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
-                
                 <div>
                     <h2 class="font-serif text-3xl md:text-5xl text-ink mb-3 md:mb-5 uppercase tracking-wider">Partnerships & <br class="hidden lg:block"/> Investments</h2>
                     <div class="w-10 md:w-12 h-[2px] bg-accent mb-4 md:mb-8"></div>
                     <p class="text-textGrey leading-relaxed mb-6 md:mb-10 text-xs md:text-base">
-                        Align your brand with Limpopo’s premier cultural movement. We offer strategic partnership opportunities for brands looking to connect with a high-end, engaged demographic through bespoke activations and premium visibility.
+                        Align your brand with Limpopo’s premier cultural movement. We offer strategic partnership opportunities for brands looking to connect with an engaged demographic through bespoke activations and premium visibility.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-3 md:gap-5 mb-8 md:mb-10">
-                        <a href="#" class="bg-white border border-accent/20 text-ink px-4 md:px-6 py-3 md:py-3.5 text-[10px] md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl flex items-center justify-center gap-2 hover:border-accent transition-colors">
+                        <a href="#" class="bg-white border border-accent/20 text-ink px-4 md:px-6 py-3 md:py-3.5 text-[10px] md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl flex items-center justify-center gap-2 hover:border-accent transition-colors shadow-sm">
                             <i data-lucide="file-text" class="w-3.5 h-3.5 md:w-4 md:h-4 text-accent"></i> Download Proposal
                         </a>
                         <a href="#" class="bg-ink text-white px-4 md:px-6 py-3 md:py-3.5 text-[10px] md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl shadow-lg flex items-center justify-center gap-2 hover:bg-accent transition-colors">
@@ -388,7 +603,7 @@
                         </a>
                     </div>
                     
-                    <div class="inline-flex items-center gap-2 md:gap-3 bg-bgLight px-4 py-2 md:px-5 md:py-3 rounded-lg md:rounded-xl border border-accent/10">
+                    <div class="inline-flex items-center gap-2 md:gap-3 bg-white px-4 py-2 md:px-5 md:py-3 rounded-lg md:rounded-xl border border-accent/10 shadow-sm">
                         <i data-lucide="mail" class="w-4 h-4 md:w-5 md:h-5 text-accent"></i>
                         <p class="text-[9px] md:text-xs font-semibold text-textGrey">Direct inquiries to: <a href="mailto:Info@makarapaday.co.za" class="text-ink hover:text-accent border-b border-transparent hover:border-accent transition-colors">Info@makarapaday.co.za</a></p>
                     </div>
@@ -407,7 +622,7 @@
                         </div>
                         <input type="email" placeholder="Email Address" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm" required>
                         <input type="tel" placeholder="Phone Number" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm" required>
-                        <textarea placeholder="Tell us about your interest..." rows="4" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm resize-none" required></textarea>
+                        <textarea placeholder="Tell us about your brand partnership interest..." rows="4" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm resize-none" required></textarea>
                         
                         <button type="submit" class="w-full bg-gradient-to-r from-accent to-accentBrown text-white py-3.5 md:py-4 rounded-lg md:rounded-xl font-bold uppercase tracking-widest text-[10px] md:text-xs shadow-md hover:scale-[1.02] transition-transform mt-2 md:mt-4">
                             Send Message
@@ -418,67 +633,7 @@
         </div>
     </section>
 
-    <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgWhite">
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
-    </div>
-
-    <!-- Corporate Social Investment (CSI) - Forced 3 Columns with Neomorphism -->
-    <section id="csi" class="py-16 md:py-28 relative bg-bgLight">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 text-center relative z-10">
-            <p class="text-accentBrown font-sans tracking-[0.2em] md:tracking-[0.3em] uppercase text-[9px] md:text-xs font-bold mb-2 md:mb-3">Giving Back</p>
-            <h2 class="font-serif text-2xl md:text-5xl text-ink mb-10 md:mb-16 uppercase tracking-wider px-2">Corporate Social Investment</h2>
-            
-            <!-- Forced grid-cols-3 on mobile to keep a tight row -->
-            <div class="grid grid-cols-3 gap-2 md:gap-8 text-left px-1 md:px-0">
-                
-                <!-- True Neomorphic CSI Card 1 -->
-                <div class="bg-[#FAF9F6] p-2 md:p-10 rounded-xl md:rounded-[2rem] shadow-neo hover:shadow-neo-hover transition-shadow duration-500 border border-white/50 flex flex-col items-center md:items-start text-center md:text-left">
-                    <div class="w-6 h-6 md:w-14 md:h-14 bg-[#FAF9F6] rounded-full shadow-neo-sm flex items-center justify-center mb-2 md:mb-6">
-                        <i data-lucide="briefcase" class="text-accentBrown w-3 h-3 md:w-6 md:h-6"></i>
-                    </div>
-                    <h3 class="text-ink font-bold text-[8px] sm:text-[10px] md:text-lg mb-1 md:mb-4 tracking-tight md:tracking-wide">Makarapa Day Expo</h3>
-                    <p class="text-textGrey text-[7px] sm:text-[9px] md:text-sm leading-tight md:leading-relaxed hidden sm:block">
-                        A dedicated Business Development Expo providing local entrepreneurs and SMMEs a platform to showcase their services, network, and stimulate the township economy.
-                    </p>
-                </div>
-
-                <!-- True Neomorphic CSI Card 2 -->
-                <div class="bg-[#FAF9F6] p-2 md:p-10 rounded-xl md:rounded-[2rem] shadow-neo hover:shadow-neo-hover transition-shadow duration-500 border border-white/50 flex flex-col items-center md:items-start text-center md:text-left">
-                    <div class="w-6 h-6 md:w-14 md:h-14 bg-[#FAF9F6] rounded-full shadow-neo-sm flex items-center justify-center mb-2 md:mb-6">
-                        <i data-lucide="smile" class="text-accentBrown w-3 h-3 md:w-6 md:h-6"></i>
-                    </div>
-                    <h3 class="text-ink font-bold text-[8px] sm:text-[10px] md:text-lg mb-1 md:mb-4 tracking-tight md:tracking-wide">Community Fun Day</h3>
-                    <p class="text-textGrey text-[7px] sm:text-[9px] md:text-sm leading-tight md:leading-relaxed hidden sm:block">
-                        An inclusive, family-friendly gathering designed to foster community spirit, providing safe entertainment, food, and activities for local residents.
-                    </p>
-                </div>
-
-                <!-- True Neomorphic CSI Card 3 -->
-                <div class="bg-[#FAF9F6] p-2 md:p-10 rounded-xl md:rounded-[2rem] shadow-neo hover:shadow-neo-hover transition-shadow duration-500 border border-white/50 flex flex-col items-center md:items-start text-center md:text-left">
-                    <div class="w-6 h-6 md:w-14 md:h-14 bg-[#FAF9F6] rounded-full shadow-neo-sm flex items-center justify-center mb-2 md:mb-6">
-                        <i data-lucide="trophy" class="text-accentBrown w-3 h-3 md:w-6 md:h-6"></i>
-                    </div>
-                    <h3 class="text-ink font-bold text-[8px] sm:text-[10px] md:text-lg mb-1 md:mb-4 tracking-tight md:tracking-wide">Soccer Tournaments</h3>
-                    <p class="text-textGrey text-[7px] sm:text-[9px] md:text-sm leading-tight md:leading-relaxed hidden sm:block">
-                        Engaging the youth through sports interventions. Our soccer tournaments aim to develop local talent, encourage discipline, and keep youths active and focused.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgLight">
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
-        <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
-    </div>
-
-    <!-- Merch & Promo -->
+    <!-- Merch & Promo Section -->
     <section id="merch" class="py-16 md:py-28 relative bg-bgWhite pattern-grid">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-10 md:mb-16 relative z-10">
             <h2 class="font-sans text-2xl md:text-5xl font-black text-ink uppercase tracking-tighter mb-2 md:mb-4">Colour Ya Manyora</h2>
@@ -494,7 +649,6 @@
                 <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-14 items-center">
-                    
                     <div class="w-full flex justify-center items-center overflow-hidden rounded-xl md:rounded-[1.5rem] p-1.5 md:p-2 bg-bgLight border border-accent/10">
                         <img src="tshirts.jpg" alt="Makarapa Day T-Shirts" class="w-full h-auto aspect-[778/516] object-cover rounded-lg md:rounded-xl hover:scale-[1.02] transition-transform duration-500">
                     </div>
@@ -535,12 +689,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER WITH ALL SOCIAL MEDIA ICONS -->
     <footer class="bg-ink pt-16 md:pt-24 pb-8 md:pb-10 relative z-10">
         <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12 md:mb-16 text-center md:text-left">
                 
+                <!-- Col 1: Brand -->
                 <div class="flex flex-col items-center md:items-start">
                     <img src="makarapa.jpg" alt="Makarapa Day" class="h-8 md:h-14 mix-blend-screen opacity-80 mb-4 md:mb-6">
                     <p class="text-[10px] md:text-sm text-gray-400 leading-relaxed max-w-xs">
@@ -548,16 +703,19 @@
                     </p>
                 </div>
 
+                <!-- Col 2: Navigation -->
                 <div class="flex flex-col items-center md:items-start">
                     <h4 class="text-white font-bold tracking-[0.2em] uppercase text-[9px] md:text-xs mb-4 md:mb-6">Explore</h4>
                     <ul class="space-y-3 md:space-y-4 text-[10px] md:text-sm text-gray-400">
                         <li><a href="#" target="_blank" class="hover:text-accent transition-colors">Purchase Tickets</a></li>
-                        <li><a href="#gallery" class="hover:text-accent transition-colors">2025 Gallery</a></li>
-                        <li><a href="#partnerships" class="hover:text-accent transition-colors">Partnerships</a></li>
+                        <li><a href="#lineup" class="hover:text-accent transition-colors">Artist Spotlight</a></li>
+                        <li><a href="#sponsors" class="hover:text-accent transition-colors">Partners & Backing</a></li>
                         <li><a href="#csi" class="hover:text-accent transition-colors">CSI Initiatives</a></li>
+                        <li><a href="#gallery" class="hover:text-accent transition-colors">2025 Gallery</a></li>
                     </ul>
                 </div>
 
+                <!-- Col 3: Contact & Full Social Suite -->
                 <div class="flex flex-col items-center md:items-start">
                     <h4 class="text-white font-bold tracking-[0.2em] uppercase text-[9px] md:text-xs mb-4 md:mb-6">Connect</h4>
                     <ul class="space-y-3 md:space-y-4 text-[10px] md:text-sm text-gray-400 mb-6 md:mb-8">
@@ -572,12 +730,31 @@
                         </li>
                     </ul>
                     
-                    <div class="flex gap-4">
-                        <a href="https://www.instagram.com/makarapa_day/" target="_blank" class="bg-white/5 p-2.5 md:p-3 rounded-full text-white border border-white/10 hover:border-accent transition-colors">
-                            <i data-lucide="instagram" class="w-4 h-4 md:w-5 md:h-5"></i>
+                    <!-- Complete Social Media Icon Suite -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2.5 md:gap-3">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/makarapa_day/" target="_blank" aria-label="Instagram" class="bg-white/5 p-2.5 rounded-full text-white border border-white/10 hover:border-accent hover:text-accent hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
                         </a>
-                        <a href="#" class="bg-white/5 p-2.5 md:p-3 rounded-full text-white border border-white/10 hover:border-accent transition-colors">
-                            <i data-lucide="facebook" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="bg-white/5 p-2.5 rounded-full text-white border border-white/10 hover:border-accent hover:text-accent hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                        <!-- X / Twitter -->
+                        <a href="https://twitter.com/" target="_blank" aria-label="X / Twitter" class="bg-white/5 p-2.5 rounded-full text-white border border-white/10 hover:border-accent hover:text-accent hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok" class="bg-white/5 p-2.5 rounded-full text-white border border-white/10 hover:border-accent hover:text-accent hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="music-2" class="w-4 h-4"></i>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube" class="bg-white/5 p-2.5 rounded-full text-white border border-white/10 hover:border-accent hover:text-accent hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="youtube" class="w-4 h-4"></i>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/27760821644" target="_blank" aria-label="WhatsApp" class="bg-white/5 p-2.5 rounded-full text-white border border-white/10 hover:border-accent hover:text-accent hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
