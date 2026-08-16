@@ -25,9 +25,18 @@
                         bgLight: '#FAF9F6', /* Alabaster */
                         bgWhite: '#FFFFFF',
                         accent: '#C5A059', /* Classic Gold */
-                        accentBrown: '#8A622A', /* Deep Brown */
+                        accentLight: '#E2C275',
+                        accentBrown: '#8A622A', 
                         ink: '#111111',
                         textGrey: '#555555',
+                    },
+                    boxShadow: {
+                        'editorial': '0 15px 40px rgba(138, 98, 42, 0.08)',
+                        /* True Neomorphism for #FAF9F6 background */
+                        'neo': '10px 10px 20px rgba(217, 212, 197, 0.6), -10px -10px 20px rgba(255, 255, 255, 1)',
+                        'neo-sm': '4px 4px 10px rgba(217, 212, 197, 0.5), -4px -4px 10px rgba(255, 255, 255, 1)',
+                        'neo-inset': 'inset 6px 6px 12px rgba(217, 212, 197, 0.5), inset -6px -6px 12px rgba(255, 255, 255, 0.9)',
+                        'neo-inset-sm': 'inset 3px 3px 6px rgba(217, 212, 197, 0.5), inset -3px -3px 6px rgba(255, 255, 255, 0.9)'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -107,11 +116,6 @@
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0%); }
         }
-
-        /* Standardized Box Shadows */
-        .shadow-editorial {
-            box-shadow: 0 15px 40px rgba(138, 98, 42, 0.08);
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -120,7 +124,6 @@
     <nav class="fixed w-full z-50 glass-nav-light transition-all duration-500 py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex justify-between items-center relative z-10">
             <a href="#" class="flex-shrink-0 group">
-                <!-- Using black logo for the light nav bar -->
                 <img src="makarapa1.jpg" alt="Makarapa Day Logo" class="h-8 md:h-12 w-auto object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity">
             </a>
             
@@ -134,7 +137,7 @@
             </div>
 
             <div>
-                <a href="#" target="_blank" class="text-[9px] md:text-[11px] font-black tracking-widest uppercase text-white bg-accent px-6 py-3 rounded-full hover:bg-accentBrown transition-colors shadow-[0_4px_15px_rgba(138,98,42,0.3)]">
+                <a href="#" target="_blank" class="text-[9px] md:text-[11px] font-black tracking-widest uppercase text-white bg-accent px-5 md:px-6 py-2.5 md:py-3 rounded-full hover:bg-accentBrown transition-colors shadow-[0_4px_15px_rgba(138,98,42,0.3)]">
                     Get Tickets
                 </a>
             </div>
@@ -142,61 +145,58 @@
     </nav>
 
     <!-- 100% Opacity Image Hero with Seamless Colorless Blur -->
-    <main class="relative w-full h-screen min-h-[750px] flex flex-col justify-center items-center text-center overflow-hidden">
+    <main class="relative w-full h-[100svh] min-h-[600px] flex flex-col justify-center items-center text-center overflow-hidden">
         
         <!-- Raw Background Image at 100% Opacity -->
         <div class="absolute inset-0 z-0">
             <img src="Y.N.C_Photography0L9A6422.jpg" alt="Makarapa Background" class="w-full h-full object-cover object-center">
         </div>
 
-        <!-- Colorless Seamless Blur Mask (Provides contrast strictly through blur, no added colors) -->
+        <!-- Colorless Seamless Blur Mask -->
         <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
             <div class="hero-blur-mask w-[120vw] h-[70vh] md:w-[90vw] md:h-[80vh]"></div>
         </div>
 
         <!-- Layered Content -->
-        <div class="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center px-4 mt-10">
+        <div class="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center px-4 mt-8 md:mt-10">
             
             <!-- White Logo -->
-            <img src="makarapa.jpg" alt="Makarapa Day" class="w-full max-w-[14rem] sm:max-w-xs md:max-w-md lg:max-w-lg object-contain mix-blend-screen mb-1 md:mb-2 drop-shadow-2xl">
+            <img src="makarapa.jpg" alt="Makarapa Day" class="w-48 sm:w-64 md:w-full max-w-md lg:max-w-lg object-contain mix-blend-screen mb-2 drop-shadow-2xl">
 
             <div class="max-w-3xl flex flex-col items-center">
-                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-bold tracking-wide uppercase mb-1 leading-[1.1] drop-shadow-xl">
+                <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-bold tracking-wide uppercase mb-1 md:mb-2 leading-[1.1] drop-shadow-xl">
                     The Heart of Limpopo <br/>
-                    <span class="italic font-normal text-white/90 text-5xl sm:text-6xl md:text-7xl">beats here</span>
+                    <span class="italic font-normal text-white/90 text-4xl sm:text-6xl md:text-7xl">beats here</span>
                 </h1>
                 
-                <p class="text-[9px] md:text-[11px] font-black tracking-[0.2em] md:tracking-[0.4em] text-accent uppercase mb-0 drop-shadow-lg">
-                    8th Annual <span class="mx-2 text-white">•</span> All-Black Everything <span class="mx-2 text-white">•</span> 28 Dec 2026
+                <p class="text-[8px] sm:text-[10px] md:text-[11px] font-black tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.4em] text-accent uppercase mb-0 drop-shadow-lg">
+                    8th Annual <span class="mx-1 md:mx-2 text-white">•</span> All-Black Everything <span class="mx-1 md:mx-2 text-white">•</span> 28 Dec 2026
                 </p>
             </div>
             
-            <!-- Breathing Space -->
-            <div class="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-6">
-                <!-- Gold Primary Button -->
-                <a href="#" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-accent to-accentBrown text-white px-10 py-4 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] rounded-full shadow-[0_10px_30px_rgba(138,98,42,0.4)] hover:scale-105 transition-transform flex justify-center items-center">
+            <div class="mt-8 sm:mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 w-full sm:w-auto px-6">
+                <a href="#" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-accent to-accentBrown text-white px-8 md:px-10 py-3.5 md:py-4 text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] rounded-full shadow-[0_10px_30px_rgba(138,98,42,0.4)] hover:scale-105 transition-transform flex justify-center items-center">
                     Secure Your VIP Access
                 </a>
-                <!-- Frosted Secondary Button -->
-                <a href="#" target="_blank" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] rounded-full shadow-lg hover:bg-white/20 transition-colors flex justify-center items-center">
+                <a href="#" target="_blank" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 md:px-10 py-3.5 md:py-4 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em] rounded-full shadow-lg hover:bg-white/20 transition-colors flex justify-center items-center">
                     Get Tickets
                 </a>
             </div>
         </div>
     </main>
 
-    <!-- Animated Belt Marquee (Transition bridge to Light Theme) -->
-    <div class="relative z-20 w-full border-b border-accent/20 bg-ink py-4 md:py-5 flex items-center">
+    <!-- Animated Belt Marquee -->
+    <div class="relative z-20 w-full border-b border-accent/20 bg-ink py-3 md:py-5 flex items-center">
         <div class="belt-container">
             <div class="belt-track">
                 <div class="flex gap-4 md:gap-8 pr-4 md:pr-8">
-                    <span class="text-[10px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase flex items-center whitespace-nowrap">
+                    <span class="text-[9px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase flex items-center whitespace-nowrap">
                         Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
                         <span class="text-accent mx-3 md:mx-8">✦</span> Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
                     </span>
                 </div>
                 <div class="flex gap-4 md:gap-8 pr-4 md:pr-8">
-                    <span class="text-[10px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase flex items-center whitespace-nowrap">
+                    <span class="text-[9px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase flex items-center whitespace-nowrap">
                         Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
                         <span class="text-accent mx-3 md:mx-8">✦</span> Makarapa Day 8th Annual <span class="text-accent mx-3 md:mx-8">✦</span> All-Black Everything <span class="text-accent mx-3 md:mx-8">✦</span> 28 Dec 2026
                     </span>
@@ -205,38 +205,39 @@
         </div>
     </div>
 
-    <!-- The Story -->
-    <section id="story" class="py-24 md:py-32 relative bg-bgLight pattern-dots">
-        <!-- Giant Roman Numeral Watermark -->
-        <div class="absolute top-10 left-10 text-[15rem] md:text-[25rem] font-serif font-bold text-accent/5 leading-none select-none pointer-events-none z-0">
+    <!-- The Story (Forced 2 Columns on Mobile & Desktop) -->
+    <section id="story" class="py-16 md:py-32 relative bg-bgLight pattern-dots overflow-hidden">
+        <div class="absolute top-4 left-4 md:top-10 md:left-10 text-[8rem] md:text-[25rem] font-serif font-bold text-accent/5 leading-none select-none pointer-events-none z-0">
             VIII
         </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <!-- Forced grid-cols-2 for ALL devices to mirror PC alignment -->
+            <div class="grid grid-cols-2 gap-4 md:gap-16 lg:gap-20 items-center">
                 
-                <div class="order-2 lg:order-1 pr-2 md:pr-0">
-                    <p class="text-accentBrown font-sans tracking-[0.3em] uppercase text-[9px] md:text-xs font-black mb-4 flex items-center gap-2">
-                        <span class="w-8 h-[1px] bg-accentBrown"></span> The Narrative
+                <!-- Text on Left -->
+                <div class="pr-2 lg:pr-0">
+                    <p class="text-accentBrown font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-[7px] md:text-xs font-black mb-2 md:mb-4 flex items-center gap-1 md:gap-2">
+                        <span class="w-4 md:w-8 h-[1px] bg-accentBrown"></span> The Narrative
                     </p>
-                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink mb-6 leading-[1.1]">Curating the Culture. <br/> <span class="italic text-accent">Elevating the Experience.</span></h2>
+                    <h2 class="font-serif text-lg sm:text-2xl md:text-5xl lg:text-6xl text-ink mb-2 md:mb-6 leading-[1.1]">Curating the Culture. <br/> <span class="italic text-accent">Elevating Experience.</span></h2>
                     
-                    <p class="text-textGrey font-normal leading-relaxed mb-6 text-sm md:text-lg">
-                        As a premier event and marketing company, Makarapa Day has spent 8 years redefining the entertainment landscape in Limpopo. We don't just host events; we architect high-end lifestyle experiences that connect engaged audiences with prestigious brands.
+                    <p class="text-textGrey font-normal leading-relaxed mb-3 md:mb-6 text-[8px] sm:text-[10px] md:text-lg">
+                        As a premier event and marketing company, Makarapa Day has spent 8 years redefining the entertainment landscape in Limpopo. We architect high-end lifestyle experiences.
                     </p>
-                    <p class="text-textGrey font-normal leading-relaxed mb-10 text-sm md:text-lg">
-                        Our signature <span class="text-ink font-bold">"All-Black Everything"</span> dress code acts as the ultimate contrast to our vibrant production—a statement of unity, elegance, and cultural pride.
+                    <p class="text-textGrey font-normal leading-relaxed mb-4 md:mb-10 text-[8px] sm:text-[10px] md:text-lg">
+                        Our signature <span class="text-ink font-bold">"All-Black"</span> dress code acts as the ultimate contrast—a statement of unity and elegance.
                     </p>
-                    <a href="https://www.instagram.com/makarapa_day/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-ink border-b-2 border-accent pb-1 hover:text-accentBrown transition-colors">
-                        Follow Us <i data-lucide="instagram" class="w-4 h-4"></i>
+                    <a href="https://www.instagram.com/makarapa_day/" target="_blank" class="inline-flex items-center gap-1 md:gap-2 text-[7px] md:text-xs font-bold uppercase tracking-[0.1em] md:tracking-[0.2em] text-ink border-b border-accent pb-0.5 hover:text-accentBrown transition-colors">
+                        Follow Us <i data-lucide="instagram" class="w-2.5 h-2.5 md:w-4 md:h-4"></i>
                     </a>
                 </div>
                 
-                <div class="order-1 lg:order-2 relative">
-                    <!-- Elegant offset frame pattern -->
-                    <div class="absolute -inset-4 md:-inset-6 border border-accent/30 rounded-2xl translate-x-4 translate-y-4 z-0"></div>
-                    <div class="bg-white p-2 rounded-2xl shadow-editorial relative z-10 w-full">
-                        <img src="hero.jpg" alt="Makarapa Experience" class="rounded-xl w-full h-auto object-cover">
+                <!-- Image on Right -->
+                <div class="relative w-full flex justify-end">
+                    <div class="absolute -inset-2 md:-inset-6 border border-accent/30 rounded-lg md:rounded-2xl translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 z-0"></div>
+                    <div class="bg-white p-1 md:p-2 rounded-lg md:rounded-2xl shadow-editorial relative z-10 w-full max-w-[280px] md:max-w-none">
+                        <img src="hero.jpg" alt="Makarapa Experience" class="rounded-md md:rounded-xl w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
@@ -244,60 +245,54 @@
     </section>
 
     <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-6 bg-bgWhite">
+    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgWhite">
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-4 text-accent/60">✦</div>
+        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
     </div>
 
     <!-- Artist Spotlight (Raw Images, Text Underneath) -->
-    <section id="lineup" class="py-20 md:py-28 relative bg-bgWhite pattern-grid">
+    <section id="lineup" class="py-16 md:py-28 relative bg-bgWhite pattern-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <div class="text-center mb-16 md:mb-24">
-                <p class="text-accent font-sans tracking-[0.3em] uppercase text-[10px] md:text-xs font-black mb-3">Makarapa Day 8th Annual</p>
-                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-ink mb-4 uppercase tracking-wider">Artist Spotlight</h2>
-                <div class="w-12 h-[2px] bg-accent mx-auto mb-4"></div>
-                <p class="text-textGrey font-sans tracking-[0.15em] uppercase text-[10px] md:text-sm">Uniq Shisanyama &bull; 28 December 2026</p>
+            <div class="text-center mb-10 md:mb-24">
+                <p class="text-accent font-sans tracking-[0.2em] md:tracking-[0.3em] uppercase text-[9px] md:text-xs font-black mb-2 md:mb-3">Makarapa Day 8th Annual</p>
+                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ink mb-2 md:mb-4 uppercase tracking-wider">Artist Spotlight</h2>
+                <div class="w-8 md:w-12 h-[2px] bg-accent mx-auto mb-3 md:mb-4"></div>
+                <p class="text-textGrey font-sans tracking-[0.1em] md:tracking-[0.15em] uppercase text-[8px] md:text-sm">Uniq Shisanyama &bull; 28 December 2026</p>
             </div>
             
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-12">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 sm:gap-x-6 lg:gap-x-8 gap-y-8 md:gap-y-12">
                 
-                <!-- Artist 1 -->
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <!-- Raw Image Frame with subtle Gold border -->
-                    <div class="w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6 shadow-editorial border border-accent/10">
+                    <div class="w-full aspect-[4/5] rounded-xl md:rounded-[1.5rem] overflow-hidden mb-3 md:mb-6 shadow-editorial border border-accent/10">
                         <img src="natiey-lepaka.jpg" alt="Natiey Lepaka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <!-- Text Underneath Cleanly -->
-                    <p class="font-cursive text-xl md:text-2xl text-accentBrown mb-1">On stage</p>
-                    <h3 class="font-sans text-sm md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Natiey<br class="hidden sm:block"/>Lepaka</h3>
+                    <p class="font-cursive text-base md:text-2xl text-accentBrown mb-0.5 md:mb-1">On stage</p>
+                    <h3 class="font-sans text-xs md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Natiey<br class="hidden sm:block"/>Lepaka</h3>
                 </div>
 
-                <!-- Artist 2 -->
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <div class="w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6 shadow-editorial border border-accent/10">
+                    <div class="w-full aspect-[4/5] rounded-xl md:rounded-[1.5rem] overflow-hidden mb-3 md:mb-6 shadow-editorial border border-accent/10">
                         <img src="jussgigi.jpg" alt="Jussgigi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <p class="font-cursive text-xl md:text-2xl text-accentBrown mb-1">On stage</p>
-                    <h3 class="font-sans text-sm md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Jussgigi</h3>
+                    <p class="font-cursive text-base md:text-2xl text-accentBrown mb-0.5 md:mb-1">On stage</p>
+                    <h3 class="font-sans text-xs md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Jussgigi</h3>
                 </div>
 
-                <!-- Artist 3 -->
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <div class="w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6 shadow-editorial border border-accent/10">
+                    <div class="w-full aspect-[4/5] rounded-xl md:rounded-[1.5rem] overflow-hidden mb-3 md:mb-6 shadow-editorial border border-accent/10">
                         <img src="tribby.jpg" alt="Tribby" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <p class="font-cursive text-xl md:text-2xl text-accentBrown mb-1">On stage</p>
-                    <h3 class="font-sans text-sm md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Tribby<br class="hidden sm:block"/>Wadi Bhozza</h3>
+                    <p class="font-cursive text-base md:text-2xl text-accentBrown mb-0.5 md:mb-1">On stage</p>
+                    <h3 class="font-sans text-xs md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Tribby<br class="hidden sm:block"/>Wadi Bhozza</h3>
                 </div>
 
-                <!-- Artist 4 -->
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <div class="w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6 shadow-editorial border border-accent/10">
+                    <div class="w-full aspect-[4/5] rounded-xl md:rounded-[1.5rem] overflow-hidden mb-3 md:mb-6 shadow-editorial border border-accent/10">
                         <img src="makhadzi.jpg" alt="Makhadzi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <p class="font-cursive text-xl md:text-2xl text-accentBrown mb-1">On stage</p>
-                    <h3 class="font-sans text-sm md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Makhadzi</h3>
+                    <p class="font-cursive text-base md:text-2xl text-accentBrown mb-0.5 md:mb-1">On stage</p>
+                    <h3 class="font-sans text-xs md:text-xl font-black uppercase tracking-widest text-ink text-center leading-tight">Makhadzi</h3>
                 </div>
 
             </div>
@@ -305,59 +300,60 @@
     </section>
 
     <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-6 bg-bgWhite">
+    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgWhite">
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-4 text-accent/60">✦</div>
+        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
     </div>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 md:py-28 relative bg-bgLight">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <div class="text-center mb-16 md:mb-20">
-                <p class="text-accentBrown font-sans tracking-[0.3em] uppercase text-[10px] md:text-xs font-black mb-3">Look Back</p>
-                <h2 class="font-serif text-3xl md:text-5xl text-ink mb-4 uppercase tracking-wider">Our Gallery</h2>
-                <p class="text-textGrey font-sans tracking-[0.1em] text-xs md:text-sm max-w-2xl mx-auto">Relive the energy, the style, and the setup of last year's Makarapa Day experience.</p>
+    <!-- Gallery Section (Forced 3 Columns on Mobile) -->
+    <section id="gallery" class="py-16 md:py-28 relative bg-bgLight">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 relative z-10">
+            <div class="text-center mb-10 md:mb-20">
+                <p class="text-accentBrown font-sans tracking-[0.2em] md:tracking-[0.3em] uppercase text-[9px] md:text-xs font-black mb-2 md:mb-3">Look Back</p>
+                <h2 class="font-serif text-3xl md:text-5xl text-ink mb-2 md:mb-4 uppercase tracking-wider">Our Gallery</h2>
+                <p class="text-textGrey font-sans tracking-[0.1em] text-[10px] md:text-sm max-w-2xl mx-auto px-4">Relive the energy, the style, and the setup of last year's Makarapa Day experience.</p>
             </div>
 
             <!-- Gold frame enveloping the entire gallery -->
-            <div class="p-4 md:p-8 border border-accent/20 rounded-[2rem] bg-white/50">
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3907.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+            <div class="p-2 md:p-8 border border-accent/20 rounded-xl md:rounded-[2rem] bg-white/50 mx-2 md:mx-0">
+                <!-- Forced grid-cols-3 on mobile to keep a tight, structured gallery look -->
+                <div class="grid grid-cols-3 lg:grid-cols-4 gap-1.5 md:gap-4">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3907.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3823.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3823.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_38061.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_38061.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3780.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3780.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3744.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3744.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3654.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3654.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3546.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3546.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_PhotographyIMG_3449.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_PhotographyIMG_3449.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A9943.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_Photography0L9A9943.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A6422.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_Photography0L9A6422.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A6380.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_Photography0L9A6380.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
-                    <div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
-                        <img src="Y.N.C_Photography0L9A6366.jpg" alt="Gallery Image" class="w-full h-40 md:h-56 object-cover rounded-lg">
+                    <div class="bg-white p-0.5 md:p-1 rounded-md md:rounded-xl shadow-sm hover:shadow-editorial hover:-translate-y-1 transition-all duration-500">
+                        <img src="Y.N.C_Photography0L9A6366.jpg" alt="Gallery Image" class="w-full h-16 sm:h-24 md:h-56 object-cover rounded-[4px] md:rounded-lg">
                     </div>
                 </div>
             </div>
@@ -365,56 +361,55 @@
     </section>
 
     <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-6 bg-bgLight">
+    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgLight">
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-4 text-accent/60">✦</div>
+        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
     </div>
 
     <!-- Partnerships & Investments Section -->
-    <section id="partnerships" class="py-20 md:py-28 relative bg-bgWhite pattern-dots">
+    <section id="partnerships" class="py-16 md:py-28 relative bg-bgWhite pattern-dots">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
                 
                 <div>
-                    <h2 class="font-serif text-3xl md:text-5xl text-ink mb-5 uppercase tracking-wider">Partnerships & <br/> Investments</h2>
-                    <div class="w-12 h-[2px] bg-accent mb-8"></div>
-                    <p class="text-textGrey leading-relaxed mb-10 text-sm md:text-base">
+                    <h2 class="font-serif text-3xl md:text-5xl text-ink mb-3 md:mb-5 uppercase tracking-wider">Partnerships & <br class="hidden lg:block"/> Investments</h2>
+                    <div class="w-10 md:w-12 h-[2px] bg-accent mb-4 md:mb-8"></div>
+                    <p class="text-textGrey leading-relaxed mb-6 md:mb-10 text-xs md:text-base">
                         Align your brand with Limpopo’s premier cultural movement. We offer strategic partnership opportunities for brands looking to connect with a high-end, engaged demographic through bespoke activations and premium visibility.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-5 mb-10">
-                        <a href="#" class="bg-white border border-accent/20 text-ink px-6 py-3.5 text-xs md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl flex items-center justify-center gap-2 hover:border-accent transition-colors">
-                            <i data-lucide="file-text" class="w-4 h-4 text-accent"></i> Download Proposal
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-5 mb-8 md:mb-10">
+                        <a href="#" class="bg-white border border-accent/20 text-ink px-4 md:px-6 py-3 md:py-3.5 text-[10px] md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl flex items-center justify-center gap-2 hover:border-accent transition-colors">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5 md:w-4 md:h-4 text-accent"></i> Download Proposal
                         </a>
-                        <a href="#" class="bg-ink text-white px-6 py-3.5 text-xs md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl shadow-lg flex items-center justify-center gap-2 hover:bg-accent transition-colors">
-                            <i data-lucide="book-open" class="w-4 h-4"></i> View Flipbook
+                        <a href="#" class="bg-ink text-white px-4 md:px-6 py-3 md:py-3.5 text-[10px] md:text-sm font-bold uppercase tracking-[0.1em] rounded-xl shadow-lg flex items-center justify-center gap-2 hover:bg-accent transition-colors">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 md:w-4 md:h-4"></i> View Flipbook
                         </a>
                     </div>
                     
-                    <div class="inline-flex items-center gap-3 bg-bgLight px-5 py-3 rounded-xl border border-accent/10">
-                        <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
-                        <p class="text-xs font-semibold text-textGrey">Direct inquiries to: <a href="mailto:Info@makarapaday.co.za" class="text-ink hover:text-accent border-b border-transparent hover:border-accent transition-colors">Info@makarapaday.co.za</a></p>
+                    <div class="inline-flex items-center gap-2 md:gap-3 bg-bgLight px-4 py-2 md:px-5 md:py-3 rounded-lg md:rounded-xl border border-accent/10">
+                        <i data-lucide="mail" class="w-4 h-4 md:w-5 md:h-5 text-accent"></i>
+                        <p class="text-[9px] md:text-xs font-semibold text-textGrey">Direct inquiries to: <a href="mailto:Info@makarapaday.co.za" class="text-ink hover:text-accent border-b border-transparent hover:border-accent transition-colors">Info@makarapaday.co.za</a></p>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 md:p-10 rounded-[2rem] border border-accent/10 shadow-editorial relative">
-                    <!-- Decorative Corner -->
-                    <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-accent/40 rounded-tr-[2rem] translate-x-2 -translate-y-2 pointer-events-none"></div>
+                <div class="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2rem] border border-accent/10 shadow-editorial relative mt-6 lg:mt-0">
+                    <div class="absolute top-0 right-0 w-12 md:w-16 h-12 md:h-16 border-t-2 border-r-2 border-accent/40 rounded-tr-2xl md:rounded-tr-[2rem] translate-x-2 -translate-y-2 pointer-events-none"></div>
                     
-                    <h3 class="text-ink font-bold uppercase tracking-[0.15em] text-sm md:text-base mb-8 border-b border-gray-100 pb-4">
+                    <h3 class="text-ink font-bold uppercase tracking-[0.15em] text-xs md:text-base mb-6 md:mb-8 border-b border-gray-100 pb-3 md:pb-4">
                         Submit an Inquiry
                     </h3>
-                    <form action="mailto:Info@makarapaday.co.za" method="POST" enctype="text/plain" class="space-y-5">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <input type="text" placeholder="Full Name" class="w-full clean-input px-5 py-4 rounded-xl text-sm" required>
-                            <input type="text" placeholder="Company Name" class="w-full clean-input px-5 py-4 rounded-xl text-sm" required>
+                    <form action="mailto:Info@makarapaday.co.za" method="POST" enctype="text/plain" class="space-y-4 md:space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                            <input type="text" placeholder="Full Name" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm" required>
+                            <input type="text" placeholder="Company Name" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm" required>
                         </div>
-                        <input type="email" placeholder="Email Address" class="w-full clean-input px-5 py-4 rounded-xl text-sm" required>
-                        <input type="tel" placeholder="Phone Number" class="w-full clean-input px-5 py-4 rounded-xl text-sm" required>
-                        <textarea placeholder="Tell us about your interest..." rows="4" class="w-full clean-input px-5 py-4 rounded-xl text-sm resize-none" required></textarea>
+                        <input type="email" placeholder="Email Address" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm" required>
+                        <input type="tel" placeholder="Phone Number" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm" required>
+                        <textarea placeholder="Tell us about your interest..." rows="4" class="w-full clean-input px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-xs md:text-sm resize-none" required></textarea>
                         
-                        <button type="submit" class="w-full bg-gradient-to-r from-accent to-accentBrown text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs shadow-md hover:scale-[1.02] transition-transform mt-4">
+                        <button type="submit" class="w-full bg-gradient-to-r from-accent to-accentBrown text-white py-3.5 md:py-4 rounded-lg md:rounded-xl font-bold uppercase tracking-widest text-[10px] md:text-xs shadow-md hover:scale-[1.02] transition-transform mt-2 md:mt-4">
                             Send Message
                         </button>
                     </form>
@@ -424,107 +419,112 @@
     </section>
 
     <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-6 bg-bgWhite">
+    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgWhite">
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-4 text-accent/60">✦</div>
+        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
     </div>
 
-    <!-- Corporate Social Investment (CSI) -->
-    <section id="csi" class="py-20 md:py-28 relative bg-bgLight">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10">
-            <p class="text-accentBrown font-sans tracking-[0.3em] uppercase text-[10px] md:text-xs font-bold mb-3">Giving Back</p>
-            <h2 class="font-serif text-3xl md:text-5xl text-ink mb-16 uppercase tracking-wider">Corporate Social Investment</h2>
+    <!-- Corporate Social Investment (CSI) - Forced 3 Columns with Neomorphism -->
+    <section id="csi" class="py-16 md:py-28 relative bg-bgLight">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 text-center relative z-10">
+            <p class="text-accentBrown font-sans tracking-[0.2em] md:tracking-[0.3em] uppercase text-[9px] md:text-xs font-bold mb-2 md:mb-3">Giving Back</p>
+            <h2 class="font-serif text-2xl md:text-5xl text-ink mb-10 md:mb-16 uppercase tracking-wider px-2">Corporate Social Investment</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
-                <!-- Clean Gold-accented Cards -->
-                <div class="bg-white p-10 rounded-[2rem] border-t-4 border-accent shadow-editorial hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="briefcase" class="text-accentBrown w-6 h-6"></i>
+            <!-- Forced grid-cols-3 on mobile to keep a tight row -->
+            <div class="grid grid-cols-3 gap-2 md:gap-8 text-left px-1 md:px-0">
+                
+                <!-- True Neomorphic CSI Card 1 -->
+                <div class="bg-[#FAF9F6] p-2 md:p-10 rounded-xl md:rounded-[2rem] shadow-neo hover:shadow-neo-hover transition-shadow duration-500 border border-white/50 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-6 h-6 md:w-14 md:h-14 bg-[#FAF9F6] rounded-full shadow-neo-sm flex items-center justify-center mb-2 md:mb-6">
+                        <i data-lucide="briefcase" class="text-accentBrown w-3 h-3 md:w-6 md:h-6"></i>
                     </div>
-                    <h3 class="text-ink font-bold text-lg mb-4 tracking-wide">Makarapa Day Expo</h3>
-                    <p class="text-textGrey text-sm leading-relaxed">
+                    <h3 class="text-ink font-bold text-[8px] sm:text-[10px] md:text-lg mb-1 md:mb-4 tracking-tight md:tracking-wide">Makarapa Day Expo</h3>
+                    <p class="text-textGrey text-[7px] sm:text-[9px] md:text-sm leading-tight md:leading-relaxed hidden sm:block">
                         A dedicated Business Development Expo providing local entrepreneurs and SMMEs a platform to showcase their services, network, and stimulate the township economy.
                     </p>
                 </div>
 
-                <div class="bg-white p-10 rounded-[2rem] border-t-4 border-accent shadow-editorial hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="smile" class="text-accentBrown w-6 h-6"></i>
+                <!-- True Neomorphic CSI Card 2 -->
+                <div class="bg-[#FAF9F6] p-2 md:p-10 rounded-xl md:rounded-[2rem] shadow-neo hover:shadow-neo-hover transition-shadow duration-500 border border-white/50 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-6 h-6 md:w-14 md:h-14 bg-[#FAF9F6] rounded-full shadow-neo-sm flex items-center justify-center mb-2 md:mb-6">
+                        <i data-lucide="smile" class="text-accentBrown w-3 h-3 md:w-6 md:h-6"></i>
                     </div>
-                    <h3 class="text-ink font-bold text-lg mb-4 tracking-wide">Community Fun Day</h3>
-                    <p class="text-textGrey text-sm leading-relaxed">
+                    <h3 class="text-ink font-bold text-[8px] sm:text-[10px] md:text-lg mb-1 md:mb-4 tracking-tight md:tracking-wide">Community Fun Day</h3>
+                    <p class="text-textGrey text-[7px] sm:text-[9px] md:text-sm leading-tight md:leading-relaxed hidden sm:block">
                         An inclusive, family-friendly gathering designed to foster community spirit, providing safe entertainment, food, and activities for local residents.
                     </p>
                 </div>
 
-                <div class="bg-white p-10 rounded-[2rem] border-t-4 border-accent shadow-editorial hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="trophy" class="text-accentBrown w-6 h-6"></i>
+                <!-- True Neomorphic CSI Card 3 -->
+                <div class="bg-[#FAF9F6] p-2 md:p-10 rounded-xl md:rounded-[2rem] shadow-neo hover:shadow-neo-hover transition-shadow duration-500 border border-white/50 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-6 h-6 md:w-14 md:h-14 bg-[#FAF9F6] rounded-full shadow-neo-sm flex items-center justify-center mb-2 md:mb-6">
+                        <i data-lucide="trophy" class="text-accentBrown w-3 h-3 md:w-6 md:h-6"></i>
                     </div>
-                    <h3 class="text-ink font-bold text-lg mb-4 tracking-wide">Soccer Tournaments</h3>
-                    <p class="text-textGrey text-sm leading-relaxed">
+                    <h3 class="text-ink font-bold text-[8px] sm:text-[10px] md:text-lg mb-1 md:mb-4 tracking-tight md:tracking-wide">Soccer Tournaments</h3>
+                    <p class="text-textGrey text-[7px] sm:text-[9px] md:text-sm leading-tight md:leading-relaxed hidden sm:block">
                         Engaging the youth through sports interventions. Our soccer tournaments aim to develop local talent, encourage discipline, and keep youths active and focused.
                     </p>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Page Break Element -->
-    <div class="w-full flex items-center justify-center py-6 bg-bgLight">
+    <div class="w-full flex items-center justify-center py-4 md:py-6 bg-bgLight">
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-r from-transparent to-accent/40"></div>
-        <div class="mx-4 text-accent/60">✦</div>
+        <div class="mx-3 md:mx-4 text-accent/60 text-xs md:text-base">✦</div>
         <div class="h-[1px] w-[30%] md:w-1/4 bg-gradient-to-l from-transparent to-accent/40"></div>
     </div>
 
     <!-- Merch & Promo -->
-    <section id="merch" class="py-20 md:py-28 relative bg-bgWhite pattern-grid">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-16 relative z-10">
-            <h2 class="font-sans text-2xl md:text-5xl font-black text-ink uppercase tracking-tighter mb-4">Colour Ya Manyora</h2>
+    <section id="merch" class="py-16 md:py-28 relative bg-bgWhite pattern-grid">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-10 md:mb-16 relative z-10">
+            <h2 class="font-sans text-2xl md:text-5xl font-black text-ink uppercase tracking-tighter mb-2 md:mb-4">Colour Ya Manyora</h2>
             <div class="flex justify-center">
                 <span class="text-3xl md:text-5xl font-serif text-accent flex flex-col items-center">
-                    8 <span class="text-sm md:text-xl font-sans font-bold text-textGrey uppercase tracking-widest block mt-2">Year Anniversary</span>
+                    8 <span class="text-[10px] md:text-sm font-sans font-bold text-textGrey uppercase tracking-widest block mt-1 md:mt-2">Year Anniversary</span>
                 </span>
             </div>
         </div>
             
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <div class="bg-white rounded-[2rem] p-6 md:p-12 relative overflow-hidden border border-accent/10 shadow-editorial">
+            <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-12 relative overflow-hidden border border-accent/10 shadow-editorial">
                 <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-14 items-center">
                     
-                    <div class="w-full flex justify-center items-center overflow-hidden rounded-[1.5rem] p-2 bg-bgLight border border-accent/10">
-                        <img src="tshirts.jpg" alt="Makarapa Day T-Shirts" class="w-full h-auto aspect-[778/516] object-cover rounded-xl hover:scale-[1.02] transition-transform duration-500">
+                    <div class="w-full flex justify-center items-center overflow-hidden rounded-xl md:rounded-[1.5rem] p-1.5 md:p-2 bg-bgLight border border-accent/10">
+                        <img src="tshirts.jpg" alt="Makarapa Day T-Shirts" class="w-full h-auto aspect-[778/516] object-cover rounded-lg md:rounded-xl hover:scale-[1.02] transition-transform duration-500">
                     </div>
 
-                    <div class="flex flex-col justify-center">
-                        <h3 class="text-lg md:text-2xl font-bold text-ink uppercase mb-8 leading-relaxed text-center lg:text-left">
+                    <div class="flex flex-col justify-center text-center lg:text-left">
+                        <h3 class="text-base md:text-2xl font-bold text-ink uppercase mb-6 md:mb-8 leading-relaxed">
                             First 300 people to purchase General Tickets for <span class="text-accentBrown">R350</span> will receive FREE limited T-shirts.
                         </h3>
                         
-                        <div class="w-full bg-bgLight rounded-2xl p-6 md:p-8 border border-gray-100">
-                            <h4 class="text-[10px] md:text-xs tracking-widest text-textGrey uppercase mb-6 font-bold text-center lg:text-left">Collection Contacts:</h4>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6 text-[10px] md:text-sm font-medium tracking-widest text-ink uppercase">
-                                <div class="flex flex-col border-b border-gray-200 pb-2">
-                                    <span class="text-textGrey mb-1">Polokwane</span>
+                        <div class="w-full bg-bgLight rounded-xl md:rounded-2xl p-4 md:p-8 border border-gray-100">
+                            <h4 class="text-[9px] md:text-xs tracking-widest text-textGrey uppercase mb-4 md:mb-6 font-bold">Collection Contacts:</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 md:gap-y-6 text-[9px] md:text-sm font-medium tracking-widest text-ink uppercase">
+                                <div class="flex flex-col border-b border-gray-200 pb-1 md:pb-2">
+                                    <span class="text-textGrey mb-0.5 md:mb-1">Polokwane</span>
                                     <span>Katlego: 079 074 5730</span>
                                 </div>
-                                <div class="flex flex-col border-b border-gray-200 pb-2">
-                                    <span class="text-textGrey mb-1">Pretoria</span>
+                                <div class="flex flex-col border-b border-gray-200 pb-1 md:pb-2">
+                                    <span class="text-textGrey mb-0.5 md:mb-1">Pretoria</span>
                                     <span>Thato: 073 602 5724</span>
                                 </div>
-                                <div class="flex flex-col border-b border-gray-200 pb-2">
-                                    <span class="text-textGrey mb-1">Mpumalanga</span>
+                                <div class="flex flex-col border-b border-gray-200 pb-1 md:pb-2">
+                                    <span class="text-textGrey mb-0.5 md:mb-1">Mpumalanga</span>
                                     <span>Fox: 072 181 2102</span>
                                 </div>
-                                <div class="flex flex-col border-b border-gray-200 pb-2">
-                                    <span class="text-textGrey mb-1">Jane Furse</span>
+                                <div class="flex flex-col border-b border-gray-200 pb-1 md:pb-2">
+                                    <span class="text-textGrey mb-0.5 md:mb-1">Jane Furse</span>
                                     <span>Danise: 067 853 5852</span>
                                 </div>
-                                <div class="flex flex-col sm:col-span-2 pt-2 items-center lg:items-start">
-                                    <span class="text-textGrey mb-1">Ga-Nchabeleng</span>
+                                <div class="flex flex-col sm:col-span-2 pt-1 md:pt-2 items-center lg:items-start">
+                                    <span class="text-textGrey mb-0.5 md:mb-1">Ga-Nchabeleng</span>
                                     <span class="text-accentBrown font-black">Kaygo: 072 817 5641</span>
                                 </div>
                             </div>
@@ -536,23 +536,21 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-ink pt-20 md:pt-24 pb-10 relative z-10">
-        <!-- Thin gold line transitioning into the dark footer -->
+    <footer class="bg-ink pt-16 md:pt-24 pb-8 md:pb-10 relative z-10">
         <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-16 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12 md:mb-16 text-center md:text-left">
                 
                 <div class="flex flex-col items-center md:items-start">
-                    <!-- Utilizing the white logo for the dark footer -->
-                    <img src="makarapa.jpg" alt="Makarapa Day" class="h-10 md:h-14 mix-blend-screen opacity-80 mb-6">
-                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed max-w-xs">
+                    <img src="makarapa.jpg" alt="Makarapa Day" class="h-8 md:h-14 mix-blend-screen opacity-80 mb-4 md:mb-6">
+                    <p class="text-[10px] md:text-sm text-gray-400 leading-relaxed max-w-xs">
                         The heartbeat of Limpopo. An annual gathering celebrating African music, culture, and high-end lifestyle.
                     </p>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start">
-                    <h4 class="text-white font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-6">Explore</h4>
-                    <ul class="space-y-4 text-xs md:text-sm text-gray-400">
+                    <h4 class="text-white font-bold tracking-[0.2em] uppercase text-[9px] md:text-xs mb-4 md:mb-6">Explore</h4>
+                    <ul class="space-y-3 md:space-y-4 text-[10px] md:text-sm text-gray-400">
                         <li><a href="#" target="_blank" class="hover:text-accent transition-colors">Purchase Tickets</a></li>
                         <li><a href="#gallery" class="hover:text-accent transition-colors">2025 Gallery</a></li>
                         <li><a href="#partnerships" class="hover:text-accent transition-colors">Partnerships</a></li>
@@ -561,35 +559,35 @@
                 </div>
 
                 <div class="flex flex-col items-center md:items-start">
-                    <h4 class="text-white font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-6">Connect</h4>
-                    <ul class="space-y-4 text-xs md:text-sm text-gray-400 mb-8">
-                        <li class="flex items-center gap-3 justify-center md:justify-start">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i> Uniq Shisanyama, Ga-Nchabeleng
+                    <h4 class="text-white font-bold tracking-[0.2em] uppercase text-[9px] md:text-xs mb-4 md:mb-6">Connect</h4>
+                    <ul class="space-y-3 md:space-y-4 text-[10px] md:text-sm text-gray-400 mb-6 md:mb-8">
+                        <li class="flex items-center gap-2 md:gap-3 justify-center md:justify-start">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 md:w-4 md:h-4 text-accent"></i> Uniq Shisanyama, Ga-Nchabeleng
                         </li>
-                        <li class="flex items-center gap-3 justify-center md:justify-start">
-                            <i data-lucide="phone" class="w-4 h-4 text-accent"></i> +27 76 082 1644
+                        <li class="flex items-center gap-2 md:gap-3 justify-center md:justify-start">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 md:w-4 md:h-4 text-accent"></i> +27 76 082 1644
                         </li>
-                        <li class="flex items-center gap-3 justify-center md:justify-start">
-                            <i data-lucide="mail" class="w-4 h-4 text-accent"></i> <a href="mailto:Info@makarapaday.co.za" class="hover:text-white transition-colors">Info@makarapaday.co.za</a>
+                        <li class="flex items-center gap-2 md:gap-3 justify-center md:justify-start">
+                            <i data-lucide="mail" class="w-3.5 h-3.5 md:w-4 md:h-4 text-accent"></i> <a href="mailto:Info@makarapaday.co.za" class="hover:text-white transition-colors">Info@makarapaday.co.za</a>
                         </li>
                     </ul>
                     
                     <div class="flex gap-4">
-                        <a href="https://www.instagram.com/makarapa_day/" target="_blank" class="bg-white/5 p-3 rounded-full text-white border border-white/10 hover:border-accent transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="https://www.instagram.com/makarapa_day/" target="_blank" class="bg-white/5 p-2.5 md:p-3 rounded-full text-white border border-white/10 hover:border-accent transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </a>
-                        <a href="#" class="bg-white/5 p-3 rounded-full text-white border border-white/10 hover:border-accent transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="bg-white/5 p-2.5 md:p-3 rounded-full text-white border border-white/10 hover:border-accent transition-colors">
+                            <i data-lucide="facebook" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
-                <p class="text-[8px] md:text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase">
+            <div class="flex flex-col md:flex-row justify-between items-center pt-6 md:pt-8 border-t border-white/10 gap-3 md:gap-4">
+                <p class="text-[7px] md:text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase">
                     &copy; 2026 Makarapa Day. All Rights Reserved.
                 </p>
-                <p class="text-[8px] md:text-[10px] text-gray-500 font-bold tracking-widest uppercase">
+                <p class="text-[7px] md:text-[10px] text-gray-500 font-bold tracking-widest uppercase">
                     Digital Architecture by <span class="text-white">Automania</span>.
                 </p>
             </div>
@@ -601,7 +599,3 @@
     </script>
 </body>
 </html>
-
-
-
-
